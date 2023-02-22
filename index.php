@@ -25,24 +25,25 @@
 
         <label for="date">Afspraak datum:</label><br>
         <input type="datetime-local" name="date" id="date">
-        <input type="hidden" name="date"><br>
+        <input type="hidden" name="huidigeDatum" value="<?= date('Y-m-d H:i:s'); ?>"><br>
 
         <label for="treatment">Soort behandeling:</label>
         <br>
-        <input type="checkbox" name="treatment1" id="treatment1">
-        <label for="treatment1">Nagelbijt arrangement (termijnbetaling mogelijk) €180
+        <input type="checkbox" name="treatment" id="treatment">
+        <label for="treatment">Nagelbijt arrangement (termijnbetaling mogelijk) €180
         </label><br>
 
-        <input type="checkbox" name="treatment2" id="treatment2">
-        <label for="treatment2">Luxe manicure (massage en handpakking) €30,00</label><br>
+        <input type="checkbox" name="treatment" id="treatment">
+        <label for="treatment">Luxe manicure (massage en handpakking) €30,00</label><br>
 
-        <input type="checkbox" name="treatment3" id="treatment3">
-        <label for="treatment2">Nagelreparatie per nagel (in eerste week gratis) €5,00</label><br>
+        <input type="checkbox" name="treatment" id="treatment">
+        <label for="treatment">Nagelreparatie per nagel (in eerste week gratis) €5,00</label><br>
 
         <input type="submit" value="Sla Op">
         <input type="reset" value="Reset">
 
     </form>
+
 </body>
 
 </html>

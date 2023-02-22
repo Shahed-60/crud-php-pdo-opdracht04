@@ -19,7 +19,7 @@ try {
 // Maak een delete query voor het verwijderen van een record
 $sql = "DELETE FROM Afspraak
         WHERE Id = :Id";
-// :)
+
 // Bereid de query voor om de placeholder te vervangen voor een id-waarde
 $statement = $pdo->prepare($sql);
 

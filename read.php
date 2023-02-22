@@ -22,7 +22,7 @@ $sql = "SELECT Kleuren
               ,Behandeling
               ,huidigeDatum
         FROM Afspraak";
-
+//
 $statement = $pdo->prepare($sql);
 
 $statement->execute();

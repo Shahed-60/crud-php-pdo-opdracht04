@@ -96,26 +96,33 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
         <input type="color" name="color" id="color" value="<?php echo $result->Kleuren; ?>">
         <input type="color" name="color" id="color" value="<?php echo $result->Kleuren; ?>"><br>
         <br>
-        <label for="pretpark">Naam Pretpark:</label><br>
-        <input type="text" name="pretpark" id="pretpark" value="<?php echo $result->NaamPretpark; ?>"><br>
+        <label for="tel">Uw telefoonnummer:</label><br>
+        <input type="tel" name="tel" id="tel" value="<?php echo $result->Tel; ?>"><br>
         <br>
-        <label for="land">Naam Land:</label><br>
-        <input type="text" name="land" id="land" value="<?php echo $result->Land; ?>"><br>
+        <label for="email">Uw e-mailadres:</label><br>
+        <input type="email" name="email" id="email" value="<?php echo $result->Email; ?>"><br>
         <br>
-        <label for="snelheid">Topsnelheid (km/u):</label><br>
-        <input type="number" name="snelheid" id="snelheid" value="<?php echo $result->Topsnelheid; ?>"><br>
+        <label for="date">Afspraak datum:</label><br>
+        <input type="datetime-local" name="date" id="date" value="<?php echo $result->Afspraak; ?>"><br>
+        <input type="hidden" name="huidigeDatum" value="<?= date('Y-m-d H:i:s'); ?>" value="<?php echo $result->huidigDatum; ?>"><br>
         <br>
-        <label for="hoogte">Hoogte (m):</label><br>
-        <input type="number" name="hoogte" id="hoogte" value="<?php echo $result->Hoogte; ?>"><br>
+        <label for="treatment">Soort behandeling:</label>
+        <br>
+        <input type="checkbox" name="treatment" id="treatment" value="<?php echo $result->Behandeling; ?>"><br>>
+        <label for="treatment">Nagelbijt arrangement (termijnbetaling mogelijk) €180
+        </label>
         <br>
         <label for="datum">Datum eerste opening:</label><br>
         <input type="date" name="datum" id="datum" value="<?php echo $result->Datum; ?>"><br>
         <br>
-        <label for="cijfer">Cijfer:</label><br>
-        <input type="range" id="myRange" step="0.1" max="10" oninput="updateContent()" name="cijfer" value="<?php echo $result->Cijfer; ?>">
-        <span id="content"></span><br>
+        <input type="checkbox" name="treatment" id="treatment" value="<?php echo $result->Behandeling; ?>">
+        <label for="treatment">Luxe manicure (massage en handpakking) €30,00</label>
         <br>
-        <input type="submit" name="submit" value="Sla Op">
+        <input type="checkbox" name="treatment" id="treatment" value="<?php echo $result->Behandeling; ?>">
+        <label for="treatment">Nagelreparatie per nagel (in eerste week gratis) €5,00</label>
+        <br>
+        <input type="submit" value="Sla Op">
+        <input type="reset" value="Reset">
     </form>
 
     <script src="eheh.js"></script>

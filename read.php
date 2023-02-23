@@ -15,7 +15,8 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
-$sql = "SELECT Kleuren
+$sql = "SELECT Id
+              ,Kleuren
               ,Tel
               ,Email
               ,Afspraak
@@ -33,6 +34,7 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
 $rows = "";
 foreach ($result as $info) {
     $rows .= "<tr>
+              <td>$info->Id</td>
               <td>$info->Kleuren</td>
               <td>$info->Tel</td>
               <td>$info->Email</td>
@@ -40,12 +42,12 @@ foreach ($result as $info) {
               <td>$info->Behandeling</td>
               <td>$info->huidigeDatum</td>
               <td>
-              <a href='delete.php?Id=$info->Afspraak'>
+              <a href='delete.php?Id=$info->Id'>
               <img src='img/b_drop.png' alt='kruis'>
           </a>
       </td>
       <td>
-          <a href='update.php?Id=$info->Afspraak'>
+          <a href='update.php?Id=$info->Id'>
               <img src='img/b_edit.png' alt='potlood'>
           </a>
       </td>
@@ -73,7 +75,7 @@ foreach ($result as $info) {
     <br>
     <table border='1'>
         <thead>
-            <!-- <th>Id</th> -->
+            <th>Id</th>
             <th>Kleuren</th>
             <th>Tel</th>
             <th>Email</th>
@@ -82,8 +84,6 @@ foreach ($result as $info) {
             <th>huidigeDatum</th>
             <th></th>
             <th></th>
-            <!-- <th></th> -->
-            <!-- <th></th> -->
         </thead>
         <tbody>
             <?= $rows; ?>

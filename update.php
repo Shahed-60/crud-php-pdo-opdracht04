@@ -27,18 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         Email = :email,
                         Afspraak = :afspraak,
                         Behandeling = :treatment,
-                        huidigeDatum = :huidigeDatum,
+                        huidigeDatum = :huidigeDatum
                     WHERE  Id = :Id";
 
         $statement = $pdo->prepare($sql);
 
-        // $statement->bindValue(':Id', $_POST['Id'], PDO::PARAM_INT);
+        $statement->bindValue(':Id', $_POST['Id'], PDO::PARAM_INT);
         $statement->bindValue(':color', $_POST['color'], PDO::PARAM_STR);
         $statement->bindValue(':tel', $_POST['tel'], PDO::PARAM_STR);
         $statement->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
         $statement->bindValue(':afspraak', $_POST['date'], PDO::PARAM_STR);
         $statement->bindValue(':treatment', ($_POST['treatment']), PDO::PARAM_STR);
-        $statement->bindValue(':huidigeDatum', ($_POST['huidigDatum']), PDO::PARAM_STR);
+        $statement->bindValue(':huidigeDatum', ($_POST['huidigeDatum']), PDO::PARAM_STR);
         $statement->execute();
         // :)
         echo "Het updaten is gelukt";
@@ -82,11 +82,11 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De 5 snelste achtbanen van Europe</title>
+    <title>Bling Bling Nagel chantal</title>
 </head>
 
 <body>
-    <h1>De 5 snelste achtbanen van Europe</h1>
+    <h1>Bling Bling Nagel chantal</h1>
 
     <form action="update.php" method="post">
         <input type="text" name="Id" value="<?php echo $result->Id; ?>" hidden>
@@ -104,16 +104,12 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
         <br>
         <label for="date">Afspraak datum:</label><br>
         <input type="datetime-local" name="date" id="date" value="<?php echo $result->Afspraak; ?>"><br>
-        <input type="hidden" name="huidigeDatum" value="<?= date('Y-m-d H:i:s'); ?>" value="<?php echo $result->huidigDatum; ?>"><br>
+        <input type="hidden" name="huidigeDatum" value="<?= date('Y-m-d H:i:s'); ?>" value="<?php echo $result->huidigeDatum; ?>"><br>
         <br>
-        <label for="treatment">Soort behandeling:</label>
-        <br>
-        <input type="checkbox" name="treatment" id="treatment" value="<?php echo $result->Behandeling; ?>"><br>>
+        <label for="treatment">Soort behandeling:</label><br>
+        <input type="checkbox" name="treatment" id="treatment" value="<?php echo $result->Behandeling; ?>">
         <label for="treatment">Nagelbijt arrangement (termijnbetaling mogelijk) €180
         </label>
-        <br>
-        <label for="datum">Datum eerste opening:</label><br>
-        <input type="date" name="datum" id="datum" value="<?php echo $result->Datum; ?>"><br>
         <br>
         <input type="checkbox" name="treatment" id="treatment" value="<?php echo $result->Behandeling; ?>">
         <label for="treatment">Luxe manicure (massage en handpakking) €30,00</label>

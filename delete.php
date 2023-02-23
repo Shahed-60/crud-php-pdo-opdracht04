@@ -36,3 +36,4 @@ if ($result) {
     echo "Het record is niet verwijderd";
     header('Refresh:3; url=read.php');
 }
+// Delete werkt:)

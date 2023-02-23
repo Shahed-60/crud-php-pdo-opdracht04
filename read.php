@@ -34,7 +34,7 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
 $rows = "";
 foreach ($result as $info) {
     $rows .= "<tr>
-              <td>$info->Id</td>
+              
               <td>$info->Kleuren</td>
               <td>$info->Tel</td>
               <td>$info->Email</td>
@@ -75,7 +75,7 @@ foreach ($result as $info) {
     <br>
     <table border='1'>
         <thead>
-            <th>Id</th>
+
             <th>Kleuren</th>
             <th>Tel</th>
             <th>Email</th>
